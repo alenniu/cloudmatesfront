@@ -28,11 +28,11 @@ class Footer extends React.Component {
               © 2019{" "}
               <a
                 className="font-weight-bold ml-1"
-                href="https://www"
+                href="https://www.cloudmates.ca"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Mentr
+                CloudMates
               </a>
             </div>
           </Col>

@@ -11,12 +11,13 @@ import {
   Button
 
 } from "reactstrap";
+import "../../assets/css/election.css"
 import {  Header as Header1, Icon, Image, Modal } from 'semantic-ui-react'
 // core components
 import Header from "components/Headers/Header.jsx";
 import axios from "axios";
 import {PricingTable, PricingSlot, PricingDetail} from 'react-pricing-table';
-import "../../assets/css/election.css"
+
 import ExampleComponent from "react-rounded-image";
 import VoteScreen from './voteScreen'
 import { Message } from 'semantic-ui-react'
@@ -112,6 +113,7 @@ class Election extends React.Component {
                     </div>        
                 </div>
                   
+                  
               </div>
              
 
@@ -160,9 +162,10 @@ class Election extends React.Component {
                 
                 
                  </Card>
+                 
              </div>
             </Row>
-    
+           
 </Container>
 
       </>

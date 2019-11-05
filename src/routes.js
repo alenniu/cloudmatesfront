@@ -25,6 +25,8 @@ import Clubs from "./components/Clubs/Clubs.jsx";
 import ClubDetails from './components/Clubs/ClubDetails'
 import Election from './components/Election/Election'
 import LunchMenu from './components/LunchMenu/LunchMenu'
+import Calendar from './components/Calendar/Calendar'
+import Landing from './components/Landing/Landing'
 
 var routes = [
   {
@@ -32,6 +34,13 @@ var routes = [
     name: "Dashboard",
     icon: "ni ni-tv-2 text-primary",
     component: Index,
+    layout: "/admin"
+  },
+  {
+    path: "/landing",
+    name: "Landing",
+    icon: "ni ni-send text-green",
+    component: Landing,
     layout: "/admin"
   },
   {
@@ -62,6 +71,7 @@ var routes = [
     component: Tables,
     layout: "/admin"
   },
+  
   {
     path: "/clubs/:id",
     name: "ClubDetails",
@@ -69,16 +79,24 @@ var routes = [
     component: ClubDetails,
     layout: "/admin"
   },
+  
   {
     path: "/clubs",
-    name: "Clubs",
+    name: "Houses",
     icon: "ni ni-atom text-red",
     component: Clubs,
     layout: "/admin"
   },
   {
+    path: "/calendar",
+    name: "Community Service",
+    icon: "ni ni-calendar-grid-58 text-yellow",
+    component: Calendar,
+    layout: "/admin"
+  },
+  {
     path: "/election",
-    name: "Election",
+    name: "Polls",
     icon: "ni ni-chart-bar-32 text-green",
     component: Election,
     layout: "/admin"

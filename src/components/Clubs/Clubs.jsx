@@ -164,7 +164,7 @@ class Clubs extends React.Component {
               <Card   className="shadow">
                 <CardHeader  style={{backgroundRepeat: 'repeat', backgroundImage: 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_lOqd08RhMtPu8rMCVlKN_tZ3af715OaSMj0MsfyMQ15hz_1HFg")'}} className="border-0">
                   <Row>
-                  <h3 className="mb-0">Clubs</h3>
+                  <h3 className="mb-0">Houses</h3>
                   </Row>  
                 </CardHeader>
                 <List divided verticalAlign='middle'>

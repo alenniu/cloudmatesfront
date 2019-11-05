@@ -1,6 +1,7 @@
 {
   "name": "argon-dashboard-react",
   "version": "1.0.0",
+  "sideEffects": [ "*.css" ],
   "description": "React version of Mentr",
   "main": "index.js",
   "repository": {
@@ -81,6 +82,7 @@
     "@types/googlemaps": "3.30.18",
     "@types/markerclustererplus": "2.1.33",
     "@types/react": "16.8.7",
+    "mini-css-extract-plugin": "^0.8.0",
     "typescript": "3.3.3333"
   }
 }

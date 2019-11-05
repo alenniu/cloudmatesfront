@@ -250,13 +250,32 @@ class Sidebar extends React.Component {
             <hr className="my-3" />
             {/* Heading */}
             <h6 className="navbar-heading text-muted">Contact Us</h6>
+            
             {/* Navigation */}
             <Nav className="mb-md-3" navbar>
               <NavItem>
-                <NavLink href="mentr123.weebly.com">
-                  <i className="ni ni-spaceship" />
+              <a
+                className="font-weight-bold ml-1"
+                href="https://mentr123.weebly.com/contact.html"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+               
+              
+                  <i style={{paddingRight: '5%',paddingLeft: '8%'}}className="ni ni-spaceship" />
                   Support
-                </NavLink>
+                  </a>
+                  
+                              <h3 style={{paddingLeft:'10%',marginTop:'5%',marginBottom:'1%'}} className="navbar-heading text-success">
+                                Site Visits
+                              </h3>
+
+                            
+                              <a  href="https://www.freecounterstat.com" title="website counter"><img style={{paddingLeft:'10%',marginTop:'-5%'}} src="https://counter10.wheredoyoucomefrom.ovh/private/freecounterstat.php?c=fyp6awnpceumf6lzrg5n8wd2j1b7cl4l" border="0" title="website counter" alt="website counter"></img></a>
+
+                            
+
+
               </NavItem>
             </Nav>
           </Collapse>

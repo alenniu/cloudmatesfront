@@ -11,7 +11,14 @@
 }
 
 .basic-header {
-    border-radius: 25px;
+    border-radius: 25px !important;
+   
+}
+
+.price .basic-header {
+    color:blue !important;
+    font-weight: 900 !important;
+    margin-left: 10% !important;
 }
 
 *,
@@ -69,16 +76,16 @@
 }
 
 .basic-border div:first-of-type {
-    margin-left: 10%;
+    margin-left: 10% !important;
 }
 
 .electionButton {
     /* position: absolute;
     left: 61px;
     top: 285px; */
-    margin-top: 10%;
-    margin-left: 19%;
-    background-color: #add8e6;
+    margin-top: 7% !important;
+    margin-left: 35% !important;
+    background-color: #add8e6 !important;
 }
 
 
@@ -114,11 +121,11 @@ a:hover {
 }
 
 .column img {
-    display: block;
-    width: 160px;
-    height: 160px;
-    border-radius: 100%;
-    border: solid 7px #321124;
+    display: block !important;
+    width: 160px !important;
+    height: 160px !important;
+    border-radius: 100% !important;
+    border: solid 7px #321124 !important;
 }
 
 

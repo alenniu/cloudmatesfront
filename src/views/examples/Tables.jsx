@@ -32,6 +32,7 @@ import Header from "components/Headers/Header.jsx";
 import axios from "axios";
 import {Link} from 'react-router-dom';
 import moment from 'moment';
+import { Message, Image } from 'semantic-ui-react'
 
 class Tables extends React.Component {
   constructor() {
@@ -103,7 +104,7 @@ class Tables extends React.Component {
         alert("Unable to add a new post. Please try again")
       }
     })
-    this.changeUserPoints(2)
+    this.changeUserPoints(5,this.props.name)
     this.toggle()
     // TODO: Simplify
     axios.get(`/api/posts/`)
@@ -119,11 +120,28 @@ class Tables extends React.Component {
       })
   }
 
-  onDelete(post_id) {
+  onDelete(post_id,post_username) {
+  //This is what you were working on IBRAHIM 
+    // const replies = this.state.posts[0].replies;
+    // for(let reply of replies) {
+    //   console.log(reply);
+    // }
+    // return;
+    
     axios.delete(`/api/posts/${post_id}`)
     .then(res => {
       if (res.status === 200) {
-        this.changeUserPoints(-2)
+        this.changeUserPoints(-10,post_username)
+  //This is what you were working on IBRAHIM 
+        // for(let post of this.state.posts) {
+          // for(let reply of post.replies) {
+            // console.log(reply);
+          // }
+        // }
+        // for(let reply of this.state.posts[0]) {
+          // console.log(reply)
+        // }
+
         axios.get(`/api/posts`)
         .then(res => {
           if (res.status === 200) {
@@ -159,8 +177,8 @@ onChangeStatus(post_id) {
 }
 })
 }
-changeUserPoints(delta) {
-  let user_name = this.props.name
+changeUserPoints(delta,post_username) {
+  let user_name = post_username
   axios.get(`/api/users?name=${user_name}`)
   .then(res => {
     if(res.status === 200) {
@@ -215,6 +233,12 @@ changeUserPoints(delta) {
             In Progress
           </Badge>
         )
+      }else if (post.readOnly){
+        bar = (
+          <Badge color="" className="badge badge-info">
+            IMPORTANT
+          </Badge>
+        )
       }else{
         bar = (
           <Badge color="" className="badge-dot mr-4">
@@ -223,10 +247,11 @@ changeUserPoints(delta) {
           </Badge>
         )
       }
+      
 
 
       return (
-       
+        
         <tr>
                       <th scope="row">
                         <Media className="align-items-center">
@@ -248,7 +273,10 @@ changeUserPoints(delta) {
                         {bar}
                       </td>
                       <td>
+                        {/* {post.username}    */}
+                        
                         {post.username}
+                        
                       </td>
                       <td>
                       {moment.parseZone (post.timestamp).local().fromNow()}
@@ -284,7 +312,7 @@ changeUserPoints(delta) {
                         
                             <DropdownItem
                             >
-                              <a className="text-danger" onClick={()=>this.onDelete(post._id)}>Remove</a >
+                              <a className="text-danger" onClick={()=>this.onDelete(post._id,post.username)}>Remove</a >
                             </DropdownItem>
                             
                             <DropdownItem 
@@ -313,7 +341,7 @@ changeUserPoints(delta) {
                         
                             <DropdownItem
                             >
-                              <a className="text-danger" onClick={()=>this.onDelete(post._id)}>Remove</a >
+                              <a className="text-danger" onClick={()=>this.onDelete(post._id,post.username)}>Remove</a >
                             </DropdownItem>
                             
                             <DropdownItem 
@@ -334,8 +362,23 @@ changeUserPoints(delta) {
     return (
       <>
         <Header />
+        
         {/* Page content */}
+        
         <Container className="mt--7" fluid>
+        <Message style={{marginBottom: ''}} size="small" color='red'>
+        <Message.Header>Version 1.0.1 is released. *Point Glitching Fixed* | Updates in "Patch Notes"</Message.Header>
+      
+      </Message>
+      <div style={(!this.state.current_user || !this.state.current_user.userType || this.state.current_user.userType !== 'MOD') ?  {display: 'none'}: {}}>
+                              <iframe width="450" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="https://chatroll.com/embed/chat/cloudmates?id=82DE-42PjaF&platform=html"></iframe>
+                              </div>
+                              <div style={(!this.state.current_user || !this.state.current_user.userType || this.state.current_user.userType !== 'ADMIN') ?  {display: 'none'}: {}}>
+                              <iframe width="1000" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="https://chatroll.com/embed/chat/cloudmates?id=82DE-42PjaF&platform=html"></iframe>
+                            
+                              </div>
+                              
+                            
           {/* Table */}
           <Row>
             <div className="col">
@@ -390,6 +433,12 @@ changeUserPoints(delta) {
                     {table_rows}
                   </tbody>
                 </Table>
+                <div style={(!this.state.current_user || !this.state.current_user.userType || this.state.current_user.userType !== 'MOD') ?  {display: 'none'}: {}}>
+                              <iframe width="450" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="https://chatroll.com/embed/chat/cloudmates?id=82DE-42PjaF&platform=html"></iframe>
+                              </div>
+                              <div style={(!this.state.current_user || !this.state.current_user.userType || this.state.current_user.userType !== 'ADMIN') ?  {display: 'none'}: {}}>
+                              <iframe width="450" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="https://chatroll.com/embed/chat/cloudmates?id=82DE-42PjaF&platform=html"></iframe>
+                              </div>
                 {/* <CardFooter className="py-4">
                   <nav aria-label="...">
                   <Pagination

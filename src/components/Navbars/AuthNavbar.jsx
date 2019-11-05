@@ -76,7 +76,7 @@ class AdminNavbar extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink
-                    className="nav-link-icon"
+                    className="nav-link-icon "
                     to="/auth/register"
                     tag={Link}
                   >
